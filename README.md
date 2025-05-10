@@ -116,7 +116,7 @@ weighted avg      0.42      0.51      0.44        45
 
 ## 📝 Notes
 
-- The model uses the UCI HAR Dataset
+- The model uses the [UCI HAR Dataset](https://archive.ics.uci.edu/ml/datasets/human+activity+recognition+using+smartphones)
 - Training history and model checkpoints are saved in the output directory
 - The best model is saved as `best_model.h5`
 - Performance metrics and visualizations are automatically generated

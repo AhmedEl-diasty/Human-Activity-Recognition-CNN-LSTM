@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential, load_model
 from tensorflow.keras.layers import Conv1D, MaxPooling1D, LSTM, Dense, Dropout, Flatten
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, TensorBoard
-from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.utils import to_categorical, plot_model
 import numpy as np
 import os
 import matplotlib.pyplot as plt
@@ -156,6 +156,10 @@ if __name__ == "__main__":
     input_shape = (X_train.shape[1], X_train.shape[2])
     num_classes = len(np.unique(y_train))
     model = create_model(input_shape, num_classes)
+
+    # Save model architecture image
+    os.makedirs(os.path.join('docs', 'images'), exist_ok=True)
+    plot_model(model, to_file=os.path.join('docs', 'images', 'model_architecture.png'), show_shapes=True, show_layer_names=True)
     
     # Train model
     history, output_dir = train_model(model, X_train, y_train, X_test, y_test)

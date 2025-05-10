@@ -13,11 +13,9 @@ This project implements a hybrid deep learning model combining Convolutional Neu
 ## 📊 Model Architecture
 
 The model combines:
-- CNN layers for spatial feature extraction
-- LSTM layers for temporal pattern recognition
-- Dense layers for final classification
-
-![Model Architecture](output/plots/model_architecture.png)
+- **CNN layers** for spatial feature extraction
+- **LSTM layers** for temporal pattern recognition
+- **Dense layers** for final classification
 
 ## 📁 Project Structure
 
@@ -29,7 +27,7 @@ The model combines:
 │   ├── cnn_lstm.py   # CNN-LSTM model implementation
 │   └── predict.py    # Prediction script
 ├── notebooks/
-│   └── har_cnn_lstm.ipynb  # Jupyter notebook for interactive development
+│   └── HAR_CNN_LSTM.ipynb  # Jupyter notebook for interactive development
 ├── output/
 │   ├── best_model.h5       # Trained model
 │   └── plots/             # Training and evaluation plots
@@ -88,3 +86,45 @@ python model/predict.py
 
 ### Classification Report
 ```
+              precision    recall  f1-score   support
+
+    Walking       0.50      0.27      0.35        11
+Walking Up       0.00      0.00      0.00         3
+Walking Down     0.00      0.00      0.00         5
+    Sitting      0.52      0.92      0.67        12
+   Standing      0.50      0.64      0.56        14
+
+    accuracy                           0.51        45
+   macro avg      0.30      0.37      0.32        45
+weighted avg      0.42      0.51      0.44        45
+```
+
+## 🔍 Model Details
+
+- **Input shape:** (128, 561)
+- **CNN layers:** 2 Conv1D layers with MaxPooling
+- **LSTM layers:** 2 LSTM layers
+- **Dense layers:** 2 Dense layers with Dropout
+- **Output:** 5 activity classes
+
+### Activities Recognized
+- Walking
+- Walking Upstairs
+- Walking Downstairs
+- Sitting
+- Standing
+
+## 📝 Notes
+
+- The model uses the UCI HAR Dataset
+- Training history and model checkpoints are saved in the output directory
+- The best model is saved as `best_model.h5`
+- Performance metrics and visualizations are automatically generated
+
+## 🤝 Contributing
+
+Feel free to submit issues and enhancement requests!
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

@@ -80,54 +80,11 @@ python model/predict.py
 
 ### Training Performance
 
-![Training Curves](output/plots/training_history.png)
+![Training Curves](docs/images/training_history.png)
 
 ### Model Evaluation
 
-![Confusion Matrix](output/plots/confusion_matrix.png)
+![Confusion Matrix](docs/images/confusion_matrix.png)
 
 ### Classification Report
 ```
-              precision    recall  f1-score   support
-
-    Walking       0.50      0.27      0.35        11
-Walking Up       0.00      0.00      0.00         3
-Walking Down     0.00      0.00      0.00         5
-    Sitting      0.52      0.92      0.67        12
-   Standing      0.50      0.64      0.56        14
-
-    accuracy                           0.51        45
-   macro avg      0.30      0.37      0.32        45
-weighted avg      0.42      0.51      0.44        45
-```
-
-## 🔍 Model Details
-
-### Architecture
-- Input shape: (128, 561)
-- CNN layers: 2 Conv1D layers with MaxPooling
-- LSTM layers: 2 LSTM layers
-- Dense layers: 2 Dense layers with Dropout
-- Output: 5 activity classes
-
-### Activities Recognized
-1. Walking
-2. Walking Upstairs
-3. Walking Downstairs
-4. Sitting
-5. Standing
-
-## 📝 Notes
-
-- The model uses the UCI HAR Dataset
-- Training history and model checkpoints are saved in the output directory
-- The best model is saved as 'best_model.h5'
-- Performance metrics and visualizations are automatically generated
-
-## 🤝 Contributing
-
-Feel free to submit issues and enhancement requests!
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
